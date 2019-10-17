@@ -19,8 +19,10 @@ namespace DataReadApp
         public Form1()
         {
             InitializeComponent();
-            ReadFile();
-            
+            CreateGridColumnNames();
+            DisplayData();
+
+
         }
 
         
@@ -52,17 +54,15 @@ namespace DataReadApp
                 // Create a file to write to.
                 using (StreamWriter sw = File.CreateText(path))
                 {
-                    /*for (int i = 0; i < lines.Length; i++)
-                    {
-                        if(isDoneLine)
-                        sw.Write(lines[i] + delimiter);
-                        ClearFields(reg_no, name, age, district, province, course_code, course);
-
-                    }*/
+                    
                     ClearFields(reg_no, name, age, district, province, course_code, course);
                     sw.Write(input_registration_no + "," + input_name + "," + input_age + "," + input_district + "," + input_province + "," + input_course_code +","+input_course+"\n");
                   
                     MessageBox.Show("Data added!");
+                    
+
+
+
                 }
             }
 
@@ -70,33 +70,23 @@ namespace DataReadApp
             using (StreamWriter sw = File.AppendText(path))
             {
 
-                /*for (int i = 0; i < lines.Length; i++)
-                {
-                    sw.Write(lines[i]+ delimiter);
-                    
-                    ClearFields(reg_no,name,age,district,province,course_code,course);  
-                    
-                }*/
+               
                 ClearFields(reg_no, name, age, district, province, course_code, course);
                 sw.Write(input_registration_no + "," + input_name + "," + input_age + "," + input_district + "," + input_province + "," + input_course_code + "," + input_course+"\n");
                 MessageBox.Show("Data added!");
+                
+
             }
 
-            // Open the file to read from.
+            
             
 
 
 
         }
-        private string[] Splitter(string input)
-        {
-            return Regex.Split(input, @"\W+");
-        }
+        
 
-        public void ReadFile() {
-            
-           
-        }
+        
 
         
         public void ClearFields(TextBox id, TextBox name, TextBox age, TextBox district, TextBox province, TextBox course_code, TextBox course) {
@@ -109,7 +99,7 @@ namespace DataReadApp
             course_code.Text = "";
             course.Text = "";
         }
-        public void DisplayData(string[] data) {
+        public void CreateGrid(string[] data) {
             show_all_grid.ColumnCount = 7;
             show_all_grid.Columns[0].Name = "Student Reg No";
             show_all_grid.Columns[1].Name = "Name";
@@ -123,10 +113,58 @@ namespace DataReadApp
             
             show_all_grid.Rows.Add(row);
         }
+        private void DisplayData()
+        {
+            
+            using (StreamReader sr = new StreamReader(path))
+            {
+                int row = 0;
+                string line;
+                while ((line = sr.ReadLine()) != null)
+                {
+                    string[] columns = line.Split(',');
+                    show_all_grid.Rows.Add();
+                    for (int i = 0; i < columns.Length; i++)
+                    {
+                        show_all_grid[i, row].Value = columns[i];
+                    }
+                    row++;
+                }
+            }
+        }
+
+        public void CreateGridColumnNames() {
+
+            show_all_grid.Columns.Add("col1", "Student Reg No");
+            show_all_grid.Columns.Add("col2", "Name");
+            show_all_grid.Columns.Add("col3", "Age");
+            show_all_grid.Columns.Add("col4", "District");
+            show_all_grid.Columns.Add("col5", "Province");
+            show_all_grid.Columns.Add("col6", "Course Code");
+            show_all_grid.Columns.Add("col7", "Course");
+        }
         private void view_records_Click(object sender, EventArgs e)
         {
-            ReadFile();
+            show_all_grid.Refresh();
 
+
+        }
+
+        private void show_all_grid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.show_all_grid.Rows[e.RowIndex];
+
+                reg_no.Text = row.Cells[0].Value.ToString();
+                name.Text = row.Cells[1].Value.ToString();
+                age.Text = row.Cells[2].Value.ToString();
+                district.Text = row.Cells[3].Value.ToString();
+                province.Text = row.Cells[4].Value.ToString();
+                course_code.Text = row.Cells[5].Value.ToString();
+                course.Text = row.Cells[6].Value.ToString();
+
+            }
         }
     }
 }

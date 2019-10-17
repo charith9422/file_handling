@@ -2,13 +2,4 @@
 s002,Malith,24,Kandy,Central,CS201,OS
 s003,Buddima,24,Colombo,Western,CS303,CA
 s004,Tharumal,24,Kandy,Central,CS105,OOP
-s005,Nirmal,24,Kandy,Central,CS311
-s006,gjhvjh n,vjhvg,hvhgv,ghv,hvh,vjh
-s007,hvhhjvhj,vb b,nbkjbkjb,kjbj,bjhv,jggvg
-s6576567,hjgjhv,jhvjh,vv,hvv,gvhgv,ghv
-s7676,jhbhjb,b,hjvhv,hjvhj,vjhbjk,kjnkj
-s1465765,hkjgg,ghghhg,jkhkjh,khkjg,ghg,ggu
-jhkj,hkjh,kjbkjb,kjbkjb,kbk,bjkbkj,bjkb
-ghgjhg,ggjhgjh,gjjh,bhjbjhv,hjvhjv,hjvjh,vjhvjh
-,,,,,,
-gug,gg,gu,hkj,ijji,hihi,hh
+hggbhj,bjhb,jbjb,jb,hbhjb,hjbhj,bhjbjh

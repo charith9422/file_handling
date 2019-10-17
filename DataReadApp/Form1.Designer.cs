@@ -113,56 +113,56 @@
             // 
             // reg_no
             // 
-            this.reg_no.Location = new System.Drawing.Point(144, 49);
+            this.reg_no.Location = new System.Drawing.Point(100, 46);
             this.reg_no.Name = "reg_no";
             this.reg_no.Size = new System.Drawing.Size(100, 20);
             this.reg_no.TabIndex = 8;
             // 
             // name
             // 
-            this.name.Location = new System.Drawing.Point(144, 87);
+            this.name.Location = new System.Drawing.Point(100, 83);
             this.name.Name = "name";
             this.name.Size = new System.Drawing.Size(100, 20);
             this.name.TabIndex = 9;
             // 
             // age
             // 
-            this.age.Location = new System.Drawing.Point(144, 128);
+            this.age.Location = new System.Drawing.Point(100, 121);
             this.age.Name = "age";
             this.age.Size = new System.Drawing.Size(100, 20);
             this.age.TabIndex = 10;
             // 
             // district
             // 
-            this.district.Location = new System.Drawing.Point(144, 162);
+            this.district.Location = new System.Drawing.Point(100, 155);
             this.district.Name = "district";
             this.district.Size = new System.Drawing.Size(100, 20);
             this.district.TabIndex = 11;
             // 
             // province
             // 
-            this.province.Location = new System.Drawing.Point(144, 193);
+            this.province.Location = new System.Drawing.Point(100, 186);
             this.province.Name = "province";
             this.province.Size = new System.Drawing.Size(100, 20);
             this.province.TabIndex = 12;
             // 
             // course_code
             // 
-            this.course_code.Location = new System.Drawing.Point(144, 225);
+            this.course_code.Location = new System.Drawing.Point(100, 218);
             this.course_code.Name = "course_code";
             this.course_code.Size = new System.Drawing.Size(100, 20);
             this.course_code.TabIndex = 13;
             // 
             // course
             // 
-            this.course.Location = new System.Drawing.Point(144, 262);
+            this.course.Location = new System.Drawing.Point(100, 262);
             this.course.Name = "course";
             this.course.Size = new System.Drawing.Size(100, 20);
             this.course.TabIndex = 14;
             // 
             // submit
             // 
-            this.submit.Location = new System.Drawing.Point(144, 318);
+            this.submit.Location = new System.Drawing.Point(100, 311);
             this.submit.Name = "submit";
             this.submit.Size = new System.Drawing.Size(100, 23);
             this.submit.TabIndex = 15;
@@ -174,18 +174,19 @@
             // show_all_grid
             // 
             this.show_all_grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.show_all_grid.Location = new System.Drawing.Point(313, 49);
+            this.show_all_grid.Location = new System.Drawing.Point(206, 42);
             this.show_all_grid.Name = "show_all_grid";
-            this.show_all_grid.Size = new System.Drawing.Size(546, 372);
+            this.show_all_grid.Size = new System.Drawing.Size(743, 240);
             this.show_all_grid.TabIndex = 16;
+            this.show_all_grid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.show_all_grid_CellContentClick);
             // 
             // view_records
             // 
-            this.view_records.Location = new System.Drawing.Point(313, 13);
+            this.view_records.Location = new System.Drawing.Point(206, 12);
             this.view_records.Name = "view_records";
             this.view_records.Size = new System.Drawing.Size(116, 23);
             this.view_records.TabIndex = 17;
-            this.view_records.Text = "View Records";
+            this.view_records.Text = "Refresh";
             this.view_records.UseVisualStyleBackColor = true;
             this.view_records.Click += new System.EventHandler(this.view_records_Click);
             // 
@@ -193,7 +194,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(871, 450);
+            this.ClientSize = new System.Drawing.Size(961, 450);
             this.Controls.Add(this.view_records);
             this.Controls.Add(this.show_all_grid);
             this.Controls.Add(this.submit);
